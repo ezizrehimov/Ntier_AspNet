@@ -33,7 +33,7 @@ namespace DataAccess.Repositories.Base
             return await table.ToListAsync();
         }
 
-        public async Task<T> GetAsyn(int id)
+        public async Task<T> GetAsync(int id)
         {
             return await table.FindAsync(id);
         }

@@ -8,6 +8,6 @@ namespace DataAccess.UnitofWork
 {
     public interface IUnitofWork
     {
-        Task CommitAync();
+        Task CommitAsync();
     }
 }

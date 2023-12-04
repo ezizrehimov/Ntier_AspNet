@@ -1,0 +1,11 @@
+﻿@using Business.ViewModels;
+@model CategoryUpdateVM
+
+<form method="post" asp-action="update" asp-controller="category">
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <button type="submit">Update</button>
+</form>

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Business.ViewModels
 {
-    public class CategoryCreateVM
+    public class CategoryUpdateVM
     {
-        public int Id { get; set; } 
-        public string Title { get; set; }
+            public string Title { get; set; }
     }
 }

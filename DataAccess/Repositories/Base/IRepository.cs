@@ -11,7 +11,7 @@ namespace DataAccess.Repositories.Base
     {
         Task<List<T>> GetAllAsync();
 
-        Task<T> GetAsyn(int id);
+        Task<T> GetAsync(int id);
 
         Task Create(T entity);
 

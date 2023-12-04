@@ -43,7 +43,7 @@ var app = builder.Build();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller}/{action}/{id?}"
+    pattern: "{controller=category}/{action=index}/{id?}"
     );
 
 app.Run();

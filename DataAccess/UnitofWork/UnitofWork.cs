@@ -15,7 +15,7 @@ namespace DataAccess.UnitofWork
         {
             this.context = context;
         }
-        public async Task CommitAync()
+        public async Task CommitAsync()
         {
             await context.SaveChangesAsync();
         }

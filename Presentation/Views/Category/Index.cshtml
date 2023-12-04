@@ -16,6 +16,7 @@
                 <td>@item.Title</td>
                 <td>@item.CreateAt.ToShortDateString()</td>
                 <td>
+                    <a asp-action="update" asp-controller="category" asp-route-id="@item.Id">Update</a>
                     <a asp-action="delete" asp-controller="category" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>

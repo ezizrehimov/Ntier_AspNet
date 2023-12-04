@@ -33,5 +33,38 @@ namespace Presentation.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Update()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(CategoryUpdateVM model, int id)
+        {
+
+            bool result = await service.UpdateAsync(model, id);
+            if (!result)
+                return View(model);
+
+            return RedirectToAction(nameof(Index));
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            bool result = await service.Delete(id);
+
+
+            if (!result)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Index");
+
+
+        }
     }
 }

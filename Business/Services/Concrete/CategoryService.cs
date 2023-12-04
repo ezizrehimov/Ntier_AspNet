@@ -37,7 +37,18 @@ namespace Business.Services.Concrete
                 CreatedAt = DateTime.Now,
             };
             await repository.Create(category);
-            await unitofWork.CommitAync();
+            await unitofWork.CommitAsync();
+            return true;
+        }
+
+        public async Task<bool> Delete(int id)
+        {
+            var category = await repository.GetAsync(id);
+            if (category is null)
+                return false;
+
+            repository.Delete(category);
+            await unitofWork.CommitAsync();
             return true;
         }
 
@@ -51,6 +62,27 @@ namespace Business.Services.Concrete
                 categoriesVM.Add(new CategoryIndexVM { Title = item.Title, CreateAt = item.CreatedAt, Id = item.Id });
             }
             return categoriesVM;
+        }
+
+        public async Task<bool> UpdateAsync(CategoryUpdateVM model,int id)
+        {
+          
+
+            if (!modelState.IsValid) 
+                return false;
+
+            var category = await repository.GetAsync(id);
+
+            if (category is null)
+                return false;
+
+            category.Title = model.Title;
+
+            await unitofWork.CommitAsync();
+            return true; 
+
+
+           
         }
     }
 }
