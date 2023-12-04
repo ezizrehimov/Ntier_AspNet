@@ -1,0 +1,11 @@
+﻿@using Business.ViewModels;
+@model CategoryCreateVM
+
+<form method="post" asp-action="create" asp-controller="category">
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <button type="submit">Create</button>
+</form>
